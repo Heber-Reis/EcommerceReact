@@ -1,9 +1,10 @@
-import Header from "../src/components/Header/Header";
+
+import Home from "../src/components/Home/Home";
 
 function HomePage () {
   return(
     <div>
-      <Header avatar={"image-avatar.png"}/>
+      <Home/>
     </div>
   )
 }

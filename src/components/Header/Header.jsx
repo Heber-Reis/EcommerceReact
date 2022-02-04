@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./style.module.css";
 
 const menuItems = [
@@ -8,7 +9,10 @@ const menuItems = [
   {Item: "Contact", link: "#"},
 ]
 
-function Header ({avatar}) {
+function Header ({avatar, itemsTotal}) {
+
+  
+
   return(
     <div className={styles.Content}>
       <div className={styles.Logo}>
@@ -23,7 +27,14 @@ function Header ({avatar}) {
           }
         </div>
         <div className={styles.clientContent}>
-          <a href="#"><img src="/images/icon-cart.svg"/></a>
+          <div className={styles.cart}>
+          <div className={styles.ItemsCart}>
+            {
+              itemsTotal > 0 && <>{itemsTotal}</>
+            }
+          </div>
+            <a href="#"><img src="/images/icon-cart.svg"/></a>
+          </div>
           <img src={`/images/${avatar}`} width="40px"/>
         </div>
       </div>

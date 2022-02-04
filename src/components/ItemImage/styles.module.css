@@ -1,0 +1,31 @@
+.ProductGallery{
+  width: 25vw;
+}
+
+.ImageProduct{
+  border-radius: 5px;
+}
+
+.Thumbnail{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Button{
+  margin: 2px;
+  border: none;
+  cursor: pointer;
+  max-height: 60px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.selectedBtn{
+  margin: 0;
+  border: 2px solid orange;
+}
+
+.selectedImage{
+  filter: opacity(50%);
+}

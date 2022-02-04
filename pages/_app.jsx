@@ -6,8 +6,9 @@ function App ({ Component, pageProps }) {
     <>
       <Head>
         <title>Sneakers</title>
-        <Component {...pageProps}/>
+        
       </Head>
+      <Component {...pageProps}/>
     </>
   )
 }
