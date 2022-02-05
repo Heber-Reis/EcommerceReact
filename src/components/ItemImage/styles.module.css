@@ -2,6 +2,10 @@
   width: 25vw;
 }
 
+.ProductGallery button{
+  cursor: pointer;
+}
+
 .ImageProduct{
   border-radius: 5px;
 }
@@ -9,14 +13,14 @@
 .Thumbnail{
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 .Button{
   margin: 2px;
   border: none;
-  cursor: pointer;
   max-height: 60px;
+  min-width: 60px;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -28,4 +32,29 @@
 
 .selectedImage{
   filter: opacity(50%);
+}
+
+.next, .prev{
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.37);
+  position: absolute;
+  top: -40%;
+}
+
+.next{
+  top: 40%;
+  right: 34%;
+}
+
+.prev{
+  top: 40%;
+  left: 35%;
+}
+
+.BtnPopup{
+  border: none;
+  background-color: transparent;
 }

@@ -1,0 +1,29 @@
+.Content{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.PopupImage{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.836);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.info{
+  width: 40%;
+}
+
+.Close{
+  position: absolute;
+  top: 15%;
+  right: 35%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
