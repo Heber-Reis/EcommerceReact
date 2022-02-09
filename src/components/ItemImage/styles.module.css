@@ -2,6 +2,10 @@
   width: 25vw;
 }
 
+.ProductGalleryPopup{
+  position: relative;
+}
+
 .ProductGallery button{
   cursor: pointer;
 }
@@ -13,7 +17,12 @@
 .Thumbnail{
   margin-top: 20px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.ImageThumb{
+ max-width: 60px;
 }
 
 .Button{
@@ -34,27 +43,68 @@
   filter: opacity(50%);
 }
 
+.Close{
+  position: absolute;
+  top: 0;
+  right: -10%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .next, .prev{
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.37);
+  background-color: rgb(255, 255, 255);
   position: absolute;
-  top: -40%;
+  top: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .next{
-  top: 40%;
-  right: 34%;
+  right: -15px;
 }
 
 .prev{
-  top: 40%;
-  left: 35%;
+  left: -15px;
 }
 
 .BtnPopup{
   border: none;
   background-color: transparent;
+}
+
+@media (max-width: 999px){
+  .ProductGallery{
+    width: 40vw;
+    position: relative;
+  }
+}
+
+@media (max-width: 600px){
+
+  .ProductGallery{
+    width: 100vw;
+  }
+  .Thumbnail{
+    display: none;
+  }
+
+  .next, .prev{
+    top: 40%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .next{
+    right: 10px;
+  }
+
+  .prev{
+    left: 10px;
+  }
 }
