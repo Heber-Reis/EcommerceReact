@@ -1,10 +1,14 @@
 import styles from "./style.module.css";
 import Menu from "../Menu/Menu";
 
-function Header ({avatar, itemsTotal, isMobile}) {
+function Header ({avatar, itemsTotal, ResponsiveMenu}) {
 
   return(
     <div className={styles.Content}>
+      <button className={styles.ResponsiveMenu}
+              onClick={ResponsiveMenu}>
+        <img src="/images/icon-menu.svg"/>
+      </button>
       <div className={styles.Logo}>
         <a href="/"><img src="/images/logo.svg" width="100%"/></a>
       </div>

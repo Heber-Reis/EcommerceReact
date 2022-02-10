@@ -18,12 +18,9 @@ const NextPrevBtn = ({prev,next}) =>
 function ItemImage({images, popup, onClick, close}) {
 
   const [atualImage, setAtualimage] = useState(0);
-
   const isMobile = useMediaQuery({query: '(max-width: 600px)'});
 
-  const alterImage = (pos) => {
-    setAtualimage(pos);
-  }
+  const alterImage = (pos) => setAtualimage(pos);
 
   const alteraBtn = (btn) => {
     if (btn === "next") {
@@ -41,25 +38,20 @@ function ItemImage({images, popup, onClick, close}) {
       <button 
         className={styles.BtnPopup}
         onClick={onClick} 
-        disabled={popup}>
+        disabled={(isMobile)}>
           <img className={styles.ImageProduct}
             src={`/images/${images[atualImage]}.jpg`}
             width="100%"
           />
       </button>
-      { popup && !isMobile && <>
-
+      { popup && <>
             <button className={styles.Close} onClick={close}>
               <img src="/images/icon-close.svg" />
             </button>
-            <NextPrevBtn
-              prev={() => alteraBtn("prev")}
-              next={() => alteraBtn("next")}
-            />
           </>
       }
       {
-        isMobile && <NextPrevBtn 
+        (isMobile || popup) && <NextPrevBtn 
         prev={() => alteraBtn("prev")}
         next={() => alteraBtn("next")}
       />

@@ -1,3 +1,21 @@
+.ResponsiveMenu{
+  position: fixed;
+  width: 60vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.Filter{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: black;
+  filter:opacity(70%);
+  z-index: 1;
+}
+
+
 .Content{
   margin-top: 80px;
   display: flex;
@@ -17,6 +35,8 @@
 .info{
   width: 40%;
 }
+
+
 
 @media (max-width: 600px){
   .Content{

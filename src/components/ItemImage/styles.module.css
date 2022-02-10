@@ -6,10 +6,6 @@
   position: relative;
 }
 
-.ProductGallery button{
-  cursor: pointer;
-}
-
 .ImageProduct{
   border-radius: 5px;
 }
@@ -27,7 +23,6 @@
 
 .Button{
   margin: 2px;
-  border: none;
   max-height: 60px;
   min-width: 60px;
   border-radius: 5px;
@@ -48,8 +43,7 @@
   top: 0;
   right: -10%;
   background-color: transparent;
-  border: none;
-  cursor: pointer;
+  
 }
 
 .next, .prev{
@@ -74,16 +68,15 @@
 }
 
 .BtnPopup{
-  border: none;
   background-color: transparent;
 }
 
 @media (max-width: 999px){
   .ProductGallery{
     width: 40vw;
-    position: relative;
   }
 }
+
 
 @media (max-width: 600px){
 
@@ -106,5 +99,9 @@
 
   .prev{
     left: 10px;
+  }
+
+  .ImageProduct{
+    border-radius: 0;
   }
 }
