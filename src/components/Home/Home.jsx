@@ -7,6 +7,7 @@ import styles from "./style.module.css";
 import Header from "../Header/Header";
 import ItemImage from "../ItemImage/ItemImage";
 import Menu from "../Menu/Menu";
+import Info from "../Informations/Info";
 
 function Home() {
 
@@ -23,9 +24,12 @@ function Home() {
       {
         responsiveMenu && 
           <div className={styles.ResponsiveMenu}>
-            <button onClick={() => setResponsivemenu(!responsiveMenu)}>
+            <div className="Button">
+            <button onClick={() => setResponsivemenu(!responsiveMenu)}
+                    className={styles.CloseButton}>
               <img src={"/images/icon-close.svg"}/>
             </button>
+            </div>
             <Menu/>
           </div>
       }    
@@ -50,7 +54,14 @@ function Home() {
           <ItemImage images={images}
             onClick={() => setShowpopup(!showPopup)}
           />
-          <div className={styles.info}></div>
+          <div className={styles.info}>
+            <Info
+              title={"Fall Limited Edition Sneakers"}
+              description={"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer."}
+              price={250}
+              discount={0.5}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,48 @@
+.Company{
+  color: hsl(26, 100%, 55%);
+  font-size: 0.8rem;
+}
+
+.Title{
+  margin-top: 15px;
+  font-size: 2.5em;
+  color: #000;
+}
+
+.Description{
+  margin-top: 20px;
+}
+
+.Price{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Price h1{
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.Discount{
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.InitialPrice{
+  margin-top: 10px;
+  text-decoration: line-through;
+}
+
+@media (max-width: 700px){
+  .Company{
+    margin-top: 20px;
+  }
+}
