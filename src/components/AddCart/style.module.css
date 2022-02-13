@@ -1,0 +1,25 @@
+.AddCart{
+  display: flex;
+  gap: 10px;
+}
+
+.Quantity {
+  padding: 20px;
+  background-color: hsl(0, 33%, 97%);
+  width:  30%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Quantity p{
+  color: black;
+  font-weight: 700;
+}
+
+.BtnQnt{
+  background-color: transparent;
+  font-size: 25px;
+  color: hsl(26, 100%, 55%);
+}

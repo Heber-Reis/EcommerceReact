@@ -1,8 +1,17 @@
 import styles from "./style.module.css";
 
-function Info ({title, description, price, discount}) {
+import AddCart from "../AddCart/AddCart";
+import { useEffect, useState } from "react";
+
+function Info ({title, description, price, discount, quant}) {
 
   const finalPrice = price * discount;
+  const [Quantity, setQuantity] = useState(0);
+
+  function setQnt (quant){
+    setQuantity(quant);
+    
+  }
 
   return(
     <div>
@@ -14,6 +23,8 @@ function Info ({title, description, price, discount}) {
         <p className={styles.Discount}>{`${discount*100}%`}</p>
       </div>
       <p className={styles.InitialPrice}>{`R$ ${price}`}</p>
+      <AddCart quantityData={setQnt}/>
+      {quant(Quantity)}
     </div>
   )
 }

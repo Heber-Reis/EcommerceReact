@@ -19,6 +19,10 @@ function Home() {
 
   const images = ["image-product-1", "image-product-2", "image-product-3", "image-product-4"];
 
+  function setQuantity (qnt){
+    setTotalitems(qnt)
+  }
+
   return (
     <div className={styles.Page}>
       {
@@ -60,6 +64,7 @@ function Home() {
               description={"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer."}
               price={250}
               discount={0.5}
+              quant={setQuantity}
             />
           </div>
         </div>
