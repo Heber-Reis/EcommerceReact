@@ -13,7 +13,11 @@ body{
 
 button{
   border: none;
-  background-color: none;
+  background-color: transparent;
+}
+
+button:active{
+   text-decoration: none;
 }
 
 button, a{

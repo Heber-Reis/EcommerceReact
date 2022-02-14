@@ -1,7 +1,12 @@
 import styles from "./style.module.css";
 import Menu from "../Menu/Menu";
+import Cart from "../Cart/Cart";
+import { useState } from "react";
+import reactDom from "react-dom";
 
-function Header ({avatar, itemsTotal, ResponsiveMenu}) {
+function Header ({avatar, itemsTotal, ResponsiveMenu, product}) {
+
+  const [showCart, setShowcart] = useState(false);
 
   return(
     <div className={styles.Content}>
@@ -21,12 +26,20 @@ function Header ({avatar, itemsTotal, ResponsiveMenu}) {
                 itemsTotal > 0 && <>{itemsTotal}</>
               }
             </div>
-            <a href="#"><img src="/images/icon-cart.svg" /></a>
-          </div>
+            <button className={styles.Button} onClick={() => setShowcart(!showCart)}><img src="/images/icon-cart.svg" /></button>    
+          </div>          
           <img src={`/images/${avatar}`} width="40px" />
         </div>
       </div>
-
+      {
+        showCart && 
+        <Cart
+          ImageProduct={product.Image}
+          Quantity={product.Quantity}
+          Price={product.Price}
+          Title={product.Title}
+        />
+      }
     </div>
   )
 }

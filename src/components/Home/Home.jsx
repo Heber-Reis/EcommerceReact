@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import classNames from "classnames";
 
 import styles from "./style.module.css";
@@ -15,12 +14,13 @@ function Home() {
   const [showPopup, setShowpopup] = useState(false);
   const [responsiveMenu, setResponsivemenu] = useState(false);
 
-  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
-
   const images = ["image-product-1", "image-product-2", "image-product-3", "image-product-4"];
 
-  function setQuantity (qnt){
-    setTotalitems(qnt)
+  const ProductInfo = {
+    Title: "Fall Limited Edition Sneakers",
+    Price: 125,
+    Image: "image-product-1",
+    Quantity: totalItems
   }
 
   return (
@@ -52,6 +52,7 @@ function Home() {
           avatar={"image-avatar.png"}
           itemsTotal={totalItems}
           ResponsiveMenu={() => setResponsivemenu(!responsiveMenu)}
+          product={ProductInfo}
         />
 
         <div className={styles.Content}>
@@ -64,7 +65,7 @@ function Home() {
               description={"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer."}
               price={250}
               discount={0.5}
-              quant={setQuantity}
+              setProps={setTotalitems}
             />
           </div>
         </div>

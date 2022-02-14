@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 import Button from "../Button/Button";
 import { useState } from "react";
 
-function AddCart ({quantityData}) {
+function AddCart ({setProps}) {
 
   const [Quantity, setQuantity] = useState(0);
 
@@ -23,7 +23,8 @@ function AddCart ({quantityData}) {
         >+</button>
       </div>
       <Button icon={<BsCart3 fill="white" />}
-              onClick={() => quantityData(Quantity)}>
+              onClick={() => setProps(Quantity)}
+      >
         Add to cart
       </Button>
     </div>
@@ -31,3 +32,4 @@ function AddCart ({quantityData}) {
 }
 
 export default AddCart;
+
