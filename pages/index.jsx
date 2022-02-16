@@ -1,11 +1,10 @@
 
+import { render } from "react-dom";
 import Home from "../src/components/Home/Home";
 
 function HomePage () {
   return(
-    <div>
       <Home/>
-    </div>
   )
 }
 

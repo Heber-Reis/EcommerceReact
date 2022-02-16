@@ -8,11 +8,14 @@ import ItemImage from "../ItemImage/ItemImage";
 import Menu from "../Menu/Menu";
 import Info from "../Informations/Info";
 
+import { ItemsCart } from "../../context/ItemsCart";
 function Home() {
 
   const [totalItems, setTotalitems] = useState(2);
   const [showPopup, setShowpopup] = useState(false);
   const [responsiveMenu, setResponsivemenu] = useState(false);
+
+  console.log(totalItems);
 
   const images = ["image-product-1", "image-product-2", "image-product-3", "image-product-4"];
 
@@ -20,7 +23,10 @@ function Home() {
     Title: "Fall Limited Edition Sneakers",
     Price: 125,
     Image: "image-product-1",
-    Quantity: totalItems
+  }
+
+  const handleItems = (total) => {
+    setTotalitems(total)
   }
 
   return (
@@ -36,7 +42,8 @@ function Home() {
             </div>
             <Menu/>
           </div>
-      }    
+      }
+      <ItemsCart.Provider value={{totalItems, setItem: handleItems}}>  
       <div className={styles.Body}>
         <div className={classNames(styles.NoFilter,{[styles.Filter] : responsiveMenu})}></div>
         {
@@ -65,11 +72,11 @@ function Home() {
               description={"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer."}
               price={250}
               discount={0.5}
-              setProps={setTotalitems}
             />
           </div>
         </div>
       </div>
+      </ItemsCart.Provider> 
     </div>
   )
 }

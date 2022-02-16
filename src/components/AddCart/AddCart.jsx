@@ -1,13 +1,14 @@
 import { BsCart3 } from "react-icons/bs";
 
 import styles from "./style.module.css";
-
 import Button from "../Button/Button";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ItemsCart } from "../../context/ItemsCart"
 
 function AddCart ({setProps}) {
 
   const [Quantity, setQuantity] = useState(0);
+  const { setItem } = useContext(ItemsCart);
 
   return(
     <div className={styles.AddCart}>
@@ -23,7 +24,7 @@ function AddCart ({setProps}) {
         >+</button>
       </div>
       <Button icon={<BsCart3 fill="white" />}
-              onClick={() => setProps(Quantity)}
+              onClick={() => setItem(Quantity)}
       >
         Add to cart
       </Button>

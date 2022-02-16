@@ -3,10 +3,9 @@ import styles from "./style.module.css";
 import AddCart from "../AddCart/AddCart";
 import { useEffect, useState } from "react";
 
-function Info ({title, description, price, discount, setProps}) {
+function Info ({title, description, price, discount}) {
 
   const finalPrice = price * discount;
-  const [Quantity, setQuantity] = useState(0);
 
 
 
@@ -20,10 +19,7 @@ function Info ({title, description, price, discount, setProps}) {
         <p className={styles.Discount}>{`${discount*100}%`}</p>
       </div>
       <p className={styles.InitialPrice}>{`R$ ${price}`}</p>
-      <AddCart setProps={setQuantity}/>
-      {
-        setProps(Quantity)
-      }
+      <AddCart />
     </div>
   )
 }
