@@ -3,7 +3,7 @@ import styles from "./style.module.css";
 import { ItemsCart } from "../../context/ItemsCart";
 import { useContext } from "react";
 
-function Cart ({ImageProduct, Title, Price, Quantity}) {
+function Cart ({ImageProduct, Title, Price}) {
 
   const { totalItems } = useContext(ItemsCart);
   return(
