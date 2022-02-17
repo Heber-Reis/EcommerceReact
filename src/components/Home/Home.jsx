@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import classNames from "classnames";
 
 import styles from "./style.module.css";
@@ -11,7 +11,7 @@ import Info from "../Informations/Info";
 import { ItemsCart } from "../../context/ItemsCart";
 function Home() {
 
-  const [totalItems, setTotalitems] = useState(2);
+  const { totalItems } = useContext(ItemsCart);
   const [showPopup, setShowpopup] = useState(false);
   const [responsiveMenu, setResponsivemenu] = useState(false);
 
@@ -23,10 +23,6 @@ function Home() {
     Title: "Fall Limited Edition Sneakers",
     Price: 125,
     Image: "image-product-1",
-  }
-
-  const handleItems = (total) => {
-    setTotalitems(total)
   }
 
   return (
@@ -42,8 +38,7 @@ function Home() {
             </div>
             <Menu/>
           </div>
-      }
-      <ItemsCart.Provider value={{totalItems, setItem: handleItems}}>  
+      }  
       <div className={styles.Body}>
         <div className={classNames(styles.NoFilter,{[styles.Filter] : responsiveMenu})}></div>
         {
@@ -57,7 +52,7 @@ function Home() {
         }
         <Header
           avatar={"image-avatar.png"}
-          itemsTotal={totalItems}
+          itemsTotal={totalItems.total}
           ResponsiveMenu={() => setResponsivemenu(!responsiveMenu)}
           product={ProductInfo}
         />
@@ -75,8 +70,7 @@ function Home() {
             />
           </div>
         </div>
-      </div>
-      </ItemsCart.Provider> 
+      </div> 
     </div>
   )
 }
