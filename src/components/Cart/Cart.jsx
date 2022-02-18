@@ -3,12 +3,18 @@ import styles from "./style.module.css";
 import { ItemsCart } from "../../context/ItemsCart";
 import { useContext } from "react";
 
-function Cart ({ImageProduct, Title, Price}) {
+function Cart () {
 
-  const { totalItems } = useContext(ItemsCart);
-  console.log(totalItems)
+  const { totalItems, setItem } = useContext(ItemsCart);
 
-  console.log(totalItems[0])
+  const finalPrice = 0;
+ 
+  const deleteItem = (pos) =>{
+    const items = [...totalItems]
+    items.splice(pos,1)
+    setItem(items)
+  } 
+
   return(
     <div className={styles.Cart}>
       <p className={styles.CartTitle}>Cart</p>
@@ -17,13 +23,17 @@ function Cart ({ImageProduct, Title, Price}) {
           (totalItems.length != 0) &&
           totalItems.map((item, pos) => 
             <div key={pos} className={styles.ItemInfo}>
-              {console.log(item.total)}
-              <img src={`/images/${ImageProduct}-thumbnail.jpg`} width={"40px"} />
+              <img src={`/images/${item.info.imagesFolder}/image-product-1-thumbnail.jpg`} width={"40px"} />
               <div className={styles.Info}>
-                <p>{Title}</p>
-                <p>R$ {Price} x {item.total} <span className={styles.FinalPrice}> R$ {Price * item.total}</span></p>
+                <p>{item.info.Title}</p>
+                <p>R$ {finalPrice = (item.info.Price * (1 - item.info.Discount)).toFixed(2)} x {item.total} 
+                  <span className={styles.FinalPrice}> R$ {(finalPrice * item.total).toFixed(2)}</span>
+                </p>
               </div>
-              <button className={styles.Delete}><img src={"/images/icon-delete.svg"} /></button>
+              <button className={styles.Delete}
+                      onClick={() => deleteItem(pos)}>
+                  <img src={"/images/icon-delete.svg"} />
+              </button>
             </div>
           )
         }

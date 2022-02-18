@@ -15,15 +15,20 @@ function Home() {
   const [showPopup, setShowpopup] = useState(false);
   const [responsiveMenu, setResponsivemenu] = useState(false);
 
-  console.log(totalItems);
-
-  const images = ["image-product-1", "image-product-2", "image-product-3", "image-product-4"];
-
-  const ProductInfo = {
+  const atualProduct = {
     Title: "Fall Limited Edition Sneakers",
-    Price: 125,
-    Image: "image-product-1",
+    Price: 250,
+    Discount: 0.5,
+    Description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer.",
+    imagesFolder: "FallLimited"
   }
+
+  const images = [
+    `${atualProduct.imagesFolder}/image-product-1`, 
+    `${atualProduct.imagesFolder}/image-product-2`, 
+    `${atualProduct.imagesFolder}/image-product-3`, 
+    `${atualProduct.imagesFolder}/image-product-4`
+  ];
 
   return (
     <div className={styles.Page}>
@@ -52,9 +57,8 @@ function Home() {
         }
         <Header
           avatar={"image-avatar.png"}
-          itemsTotal={totalItems.total}
+          itemsTotal={totalItems.length}
           ResponsiveMenu={() => setResponsivemenu(!responsiveMenu)}
-          product={ProductInfo}
         />
 
         <div className={styles.Content}>
@@ -63,10 +67,7 @@ function Home() {
           />
           <div className={styles.info}>
             <Info
-              title={"Fall Limited Edition Sneakers"}
-              description={"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer."}
-              price={250}
-              discount={0.5}
+              product = {atualProduct}
             />
           </div>
         </div>

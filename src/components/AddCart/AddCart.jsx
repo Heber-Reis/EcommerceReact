@@ -5,14 +5,14 @@ import Button from "../Button/Button";
 import { useState, useContext } from "react";
 import { ItemsCart } from "../../context/ItemsCart"
 
-function AddCart () {
+function AddCart ({product}) {
 
   const [Quantity, setQuantity] = useState(0);
   const { totalItems, setItem } = useContext(ItemsCart);
 
   const handleItems = () => {
-    console.log('Entrei')
-    setItem([...totalItems, {"total" : Quantity}])
+    (Quantity !== 0) &&
+    setItem([...totalItems, {total: Quantity, info: product}])
   }
 
   return(

@@ -2,9 +2,9 @@ import styles from "./style.module.css";
 import Menu from "../Menu/Menu";
 import Cart from "../Cart/Cart";
 import { useState } from "react";
-import reactDom from "react-dom";
 
-function Header ({avatar, itemsTotal, ResponsiveMenu, product}) {
+
+function Header ({avatar, itemsTotal, ResponsiveMenu}) {
 
   const [showCart, setShowcart] = useState(false);
 
@@ -33,12 +33,7 @@ function Header ({avatar, itemsTotal, ResponsiveMenu, product}) {
       </div>
       {
         showCart && 
-        <Cart
-          ImageProduct={product.Image}
-          Quantity={product.Quantity}
-          Price={product.Price}
-          Title={product.Title}
-        />
+        <Cart/>
       }
     </div>
   )

@@ -1,25 +1,24 @@
 import styles from "./style.module.css";
 
 import AddCart from "../AddCart/AddCart";
-import { useEffect, useState } from "react";
 
-function Info ({title, description, price, discount}) {
+function Info ({product}) {
 
-  const finalPrice = price * discount;
-
-
+  const finalPrice = (product.Price * (1 - product.Discount)).toFixed(2);
 
   return(
     <div>
       <h3 className={styles.Company}>SNEACKER COMPANY</h3>
-      <h1 className={styles.Title}>{title}</h1>
-      <p className={styles.Description}>{description}</p>
+      <h1 className={styles.Title}>{product.Title}</h1>
+      <p className={styles.Description}>{product.Description}</p>
       <div className={styles.Price}>
         <h1>{`R$ ${finalPrice}`}</h1>
-        <p className={styles.Discount}>{`${discount*100}%`}</p>
+        <p className={styles.Discount}>{`${product.Discount*100}%`}</p>
       </div>
-      <p className={styles.InitialPrice}>{`R$ ${price}`}</p>
-      <AddCart />
+      <p className={styles.InitialPrice}>{`R$ ${(product.Price).toFixed(2)}`}</p>
+      <AddCart 
+        product={product}
+      />
     </div>
   )
 }
