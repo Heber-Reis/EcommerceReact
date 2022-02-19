@@ -1,0 +1,17 @@
+.Footer{
+  height: 10vh;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Challenge a{
+  text-decoration: none;
+}
+
+.Developer{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}

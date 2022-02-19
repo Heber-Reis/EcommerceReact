@@ -16,7 +16,7 @@ function Home() {
   const [responsiveMenu, setResponsivemenu] = useState(false);
 
   const atualProduct = {
-    Title: "Fall Limited Edition Sneakers",
+    Title: "Fall  Limited Edition Sneakers",
     Price: 250,
     Discount: 0.5,
     Description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theyll withstand everything the weather can offer.",

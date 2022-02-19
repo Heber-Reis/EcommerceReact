@@ -23,7 +23,7 @@
 
 
 .Content{
-  margin: 80px 15vw;
+  margin: 40px 15vw 20px 15vw;
   display: flex;
   justify-content:space-between;
 }
