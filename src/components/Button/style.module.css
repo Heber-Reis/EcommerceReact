@@ -9,6 +9,10 @@
   justify-content: center;
 }
 
+.Button:hover{
+  background-color: hsl(26, 80%, 44%);
+}
+
 .Icon{
   margin-right: 20px;
 }
