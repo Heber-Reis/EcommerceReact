@@ -1,6 +1,6 @@
 # Ecommerce React
 
-<img src="/public/EcommercePage.png"/>
+<img src="/public/images/EcommercePage.png"/>
 
 ##
 
@@ -13,11 +13,11 @@ Projeto realizado como forma de praticar os conhecimentos em ReactJS através de
 - NextJS
 - CSS
 
-## :checkered_flag Executando o projeto
+## :checkered_flag: Executando o projeto
 
 <p>Antes de iniciar a execução é nescessário ter o [NodeJS](https://nodejs.org/pt-br/) e o [Git](https://git-scm.com) instalados em sua máquina</p>
 
-Para executar diga os passoa abaixo!
+Para executar siga os passoa abaixo!
 
 ```bash
 # Clone o repositório
