@@ -6,6 +6,8 @@
 
 Projeto realizado como forma de praticar os conhecimentos em ReactJS através de um desafio do site [Front End Mentor](https://www.frontendmentor.io/home)
 
+Você pode ver o build do projeto no link (https://ecommerce-react-red.vercel.app/)
+
 ## :rocket: Tecnologias Utilizadas
 
 - ReactJS 
